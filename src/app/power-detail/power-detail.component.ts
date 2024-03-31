@@ -1,9 +1,6 @@
 import { NgIf, UpperCasePipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Power } from '../power';
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
-import { PowerService } from '../power.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -15,17 +12,4 @@ import { FormsModule } from '@angular/forms';
 })
 export class PowerDetailComponent {
   @Input() power: Power | undefined;
-
-  constructor(
-    private route: ActivatedRoute, 
-    private powerService: PowerService,
-    private location: Location
-    ) {}
-
-    
-  
-    goBack(): void {
-      this.location.back();
-    }
-
 }

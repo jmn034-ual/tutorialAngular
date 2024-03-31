@@ -1,15 +1,14 @@
-import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output} from '@angular/core';
 import { NgIf, NgFor, UpperCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { PowerDetailComponent } from '../power-detail/power-detail.component';
 import { Power } from '../power';
 import { PowerService } from '../power.service';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-powers',
   standalone: true,
-  imports: [FormsModule, NgIf, NgFor, UpperCasePipe, PowerDetailComponent,RouterLink],
+  imports: [FormsModule, NgIf, NgFor, UpperCasePipe, PowerDetailComponent],
   templateUrl: './powers.component.html',
   styleUrl: './powers.component.css',
 })
