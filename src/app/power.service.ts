@@ -17,4 +17,17 @@ export class PowerService {
     this.messageService.add('PowerService: fetched powers');
     return powers;
   }
+
+  getPower(id: number): Observable<Power> {
+    const power = POWERS.find(h => h.id === id)!;
+    this.messageService.add(`PowerService: fetched power id=${id}`);
+    return of(power);
+  }
+  getRandomPower(): Power | undefined {
+    if (POWERS.length === 0) {
+      return undefined;
+    }
+    const randomIndex = Math.floor(Math.random() * POWERS.length);
+    return POWERS[randomIndex];
+  }
 }
