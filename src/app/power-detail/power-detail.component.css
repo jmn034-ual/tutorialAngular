@@ -1,34 +1,54 @@
-/* HeroDetailComponent's private CSS styles */
-div {
-  margin-top: 10px;
-
-}
-
-label {
+.power-detail {
+    padding: 20px;
+    border-radius: 4px;
+    background-color: #c8c4c4;
+    box-shadow: 0 2px 4px rgba(212, 5, 5, 0.1);
+    width: 30%;
+    margin-bottom: 20px;
+  }
+  
+  label {
     color: #435960;
     font-weight: bold;
+    display: block;
+    margin-top: 10px;
   }
+  
   input {
     font-size: 1em;
     padding: .5rem;
+    box-sizing: border-box;
+    width: 100%;
   }
+
+  textarea{
+    font-size: 1em;
+    padding: .5rem;
+    box-sizing: border-box;
+    width: 100%;
+    resize: none;
+  }
+  
   button {
-    margin-top: 20px;
     background-color: #eee;
     padding: 1rem;
     border-radius: 4px;
     font-size: 1rem;
+    display: block;
+    margin-top: 20px;
   }
+  
   button:hover {
-    background-color: #cfd8dc;
+    background-color: #525252;
   }
+  
   button:disabled {
     background-color: #eee;
-    color: #ccc;
+    color: #cccccc;
     cursor: auto;
   }
-
- div .badge {
+  
+  .badge {
     display: inline-block;
     font-size: small;
     color: white;
@@ -44,4 +64,3 @@ label {
     margin-right: .8em;
     border-radius: 4px ;
   }
- 

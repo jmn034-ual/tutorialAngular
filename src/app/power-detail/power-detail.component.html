@@ -1,0 +1,16 @@
+<div *ngIf="power">
+    <h3>{{ power.name | uppercase }} Details</h3>
+    <div class="badge"><span>ID:{{power.id}}</span></div>
+    <div class="power-detail">
+      <label for="power-name">Power name: </label>
+      <input id="power-name" [(ngModel)]="power.name" placeholder="Power name" />
+      <label for="power-description">Power description: </label>
+      <textarea
+        id="power-description"
+        [(ngModel)]="power.description"
+        placeholder="Power description"
+        class="description"
+      ></textarea>
+    </div>
+  </div>
+  

@@ -7,7 +7,6 @@ import {
 import {FormsModule} from '@angular/forms';
 
 import {Hero} from '../hero';
-import {HEROES} from '../mock-heroes';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 import { HeroService } from '../hero.service';
 import { RouterLink } from '@angular/router';
@@ -30,6 +29,7 @@ import { RouterLink } from '@angular/router';
 
 export class HeroesComponent implements OnInit{
   heroes: Hero[] = [];
+
 
   constructor(private heroService: HeroService) { }
  
