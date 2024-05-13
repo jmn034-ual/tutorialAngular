@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { HeroSearchComponent } from '../hero-search/hero-search.component';
 import {
   NgIf,
   NgFor,
@@ -8,12 +9,12 @@ import {
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-dashboard',
-  standalone: true,
-  imports: [ NgIf,
-    NgFor, RouterLink],
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+    selector: 'app-dashboard',
+    standalone: true,
+    templateUrl: './dashboard.component.html',
+    styleUrl: './dashboard.component.css',
+    imports: [NgIf,
+        NgFor, RouterLink, HeroSearchComponent]
 })
 
 export class DashboardComponent implements OnInit {

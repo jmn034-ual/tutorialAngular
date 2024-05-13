@@ -16,7 +16,5 @@
     </div>
     <button (click)="mostrarPower = !mostrarPower">Add powers</button>
   <button type="button" (click)="goBack()">go back</button>
-  <div *ngIf="mostrarPower" >
-    <app-powers (powerClicked)="addPower($event)"></app-powers>
-  </div>
+  <button type="button" (click)="save()">save</button>
 </div>
