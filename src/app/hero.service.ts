@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Power } from './power';
 
 
 
@@ -89,6 +90,7 @@ searchHeroes(term: string): Observable<Hero[]> {
 
   /** PUT: update the hero on the server */
   updateHero(hero: Hero): Observable<any> {
+    console.log(hero.superpoderes);
     return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
       tap(_ => this.log(`updated hero id=${hero.id}`)),
       catchError(this.handleError<any>('updateHero'))

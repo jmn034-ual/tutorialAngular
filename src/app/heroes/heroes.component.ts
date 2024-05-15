@@ -10,6 +10,7 @@ import {Hero} from '../hero';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 import { HeroService } from '../hero.service';
 import { RouterLink } from '@angular/router';
+import { Power } from '../power';
 
 
 @Component({
@@ -41,7 +42,7 @@ export class HeroesComponent implements OnInit{
   ngOnInit(): void {
     this.getHeroes();
   }
-
+  
   add(name: string): void {
     name = name.trim();
     if (!name) { return; }

@@ -19,7 +19,6 @@ import { PowerDetailComponent } from '../power-detail/power-detail.component';
 })
 export class HeroDetailComponent implements OnInit {
   hero: Hero | undefined;
-  powers: Power[] = [];
   powerHero: Power | undefined;
   mostrarPower = false;
 
@@ -32,14 +31,12 @@ export class HeroDetailComponent implements OnInit {
   ) {}
 
   addPower(power: Power): void {
-    // Verifica que el poder no esté ya en la lista antes de agregarlo
-    if (!this.powers.find(p => p.id === power.id)) {
-      this.powers.push(power);
+    if (this.hero) {
+      if (!this.hero.superpoderes) {
+        this.hero.superpoderes = []; // Inicializa powers si es nulo o indefinido
+      }
+      this.hero.superpoderes.push(power);
     }
-  }
-  
-  removePower(power: Power): void {
-    this.powers = this.powers.filter(p => p.id !== power.id);
   }
 
   getPower(): void {
@@ -49,7 +46,6 @@ export class HeroDetailComponent implements OnInit {
   
   ngOnInit(): void {
     this.getHero();
-    this.addPower(this.powerService.getRandomPower()!);
   }
 
   getHero(): void {
@@ -64,8 +60,17 @@ export class HeroDetailComponent implements OnInit {
 
   save(): void {
     if (this.hero) {
+
       this.heroService.updateHero(this.hero)
         .subscribe(() => this.goBack());
+    }
+  }
+
+  removePower(power: Power): void {
+    if (this.hero) {
+      if (this.hero.superpoderes) {
+        this.hero.superpoderes = this.hero.superpoderes.filter(p => p !== power);
+      }
     }
   }
 }

@@ -8,13 +8,17 @@
     <div>
       <label for="hero-power">Powers: </label>
       <ul>
-        <li *ngFor="let power of powers">
+        <li *ngFor="let power of hero.superpoderes">
           <app-power-detail [power]="power"></app-power-detail>
-          <button (click)="removePower(power)">remove</button>
+          <button type="button" class="delete" title="delete hero"
+          (click)="removePower(power)">remove</button>
         </li>
       </ul>
     </div>
     <button (click)="mostrarPower = !mostrarPower">Add powers</button>
   <button type="button" (click)="goBack()">go back</button>
   <button type="button" (click)="save()">save</button>
+  <div *ngIf="mostrarPower">
+    <app-power-detail></app-power-detail>
+  </div>
 </div>

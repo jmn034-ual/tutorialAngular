@@ -1,5 +1,8 @@
+import { Hero } from "./hero";
+
 export interface Power {
+    id: number;
     name: string;
     description: string;
-    id: number;
+    hero?: Hero;
 }

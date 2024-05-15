@@ -9,5 +9,5 @@ export const POWERS: Power[] = [
     { id: 6, name: 'Time Manipulation', description: 'Grants the ability to control or manipulate time.' },
     { id: 7, name: 'Healing', description: 'Allows the user to restore health and heal injuries.' },
     { id: 8, name: 'Elemental Control', description: 'Enables the user to manipulate and control the elements.' },
-    { id: 9, name: 'Shapeshifting', description: 'Grants the ability to change one\'s physical form or shape.' }
+    { id: 9, name: 'Shapeshifting', description: 'Grants the ability to change one\'s physical form or shape.'}
 ];
